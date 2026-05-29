@@ -50,12 +50,12 @@
     "quickjs-emscripten": "^0.32.0"
   },
   "peerDependencies": {
-    "@shapeshift-labs/frontier": ">=0.1.8 <1",
+    "@shapeshift-labs/frontier": "0.1.9",
     "@shapeshift-labs/frontier-sandbox": "0.1.0"
   },
   "devDependencies": {
-    "@shapeshift-labs/frontier": "file:../json-diff/packages/frontier",
-    "@shapeshift-labs/frontier-sandbox": "file:../frontier-sandbox",
+    "@shapeshift-labs/frontier": "0.1.9",
+    "@shapeshift-labs/frontier-sandbox": "0.1.0",
     "typescript": "^6.0.3"
   }
 }
