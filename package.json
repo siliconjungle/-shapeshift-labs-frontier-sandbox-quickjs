@@ -1,0 +1,61 @@
+{
+  "name": "@shapeshift-labs/frontier-sandbox-quickjs",
+  "version": "0.1.0",
+  "description": "QuickJS/WebAssembly adapter for Frontier sandbox actions.",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/siliconjungle/-shapeshift-labs-frontier-sandbox-quickjs.git"
+  },
+  "homepage": "https://github.com/siliconjungle/-shapeshift-labs-frontier-sandbox-quickjs#readme",
+  "bugs": {
+    "url": "https://github.com/siliconjungle/-shapeshift-labs-frontier-sandbox-quickjs/issues"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "benchmarks/*.mjs",
+    "scripts/*.mjs"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "node scripts/with-frontier-sandbox-lock.mjs -- tsc -p test/tsconfig.json --noEmit",
+    "test": "npm run build && npm run typecheck && node scripts/with-frontier-sandbox-lock.mjs -- node test/smoke.mjs",
+    "bench": "npm run build && node scripts/with-frontier-sandbox-lock.mjs -- node benchmarks/quickjs-bench.mjs --out benchmarks/results/frontier-sandbox-quickjs-bench-latest.json",
+    "pack:dry": "npm pack --dry-run"
+  },
+  "keywords": [
+    "frontier",
+    "sandbox",
+    "quickjs",
+    "wasm"
+  ],
+  "dependencies": {
+    "quickjs-emscripten": "^0.32.0"
+  },
+  "peerDependencies": {
+    "@shapeshift-labs/frontier": ">=0.1.8 <1",
+    "@shapeshift-labs/frontier-sandbox": "0.1.0"
+  },
+  "devDependencies": {
+    "@shapeshift-labs/frontier": "file:../json-diff/packages/frontier",
+    "@shapeshift-labs/frontier-sandbox": "file:../frontier-sandbox",
+    "typescript": "^6.0.3"
+  }
+}

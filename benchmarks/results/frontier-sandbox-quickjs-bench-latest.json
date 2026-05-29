@@ -1,0 +1,32 @@
+{
+  "kind": "frontier.sandbox.quickjs.benchmark",
+  "version": 1,
+  "generatedAt": "2026-05-29T06:34:50.473Z",
+  "node": "v26.1.0",
+  "rows": [
+    {
+      "name": "quickjs.invoke.invocation-isolated",
+      "iterations": 25,
+      "totalMs": 17.678667000000004,
+      "usPerOp": 707.1466800000002
+    },
+    {
+      "name": "quickjs.invoke.runtime-isolated",
+      "iterations": 250,
+      "totalMs": 9.171458999999999,
+      "usPerOp": 36.685835999999995
+    },
+    {
+      "name": "quickjs.source.runtime-isolated",
+      "iterations": 250,
+      "totalMs": 7.475458000000003,
+      "usPerOp": 29.901832000000013
+    },
+    {
+      "name": "quickjs.dynamic.cached-source",
+      "iterations": 250,
+      "totalMs": 8.277292000000003,
+      "usPerOp": 33.10916800000001
+    }
+  ]
+}
